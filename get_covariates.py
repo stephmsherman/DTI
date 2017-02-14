@@ -2,7 +2,7 @@ import glob, sys, os
 import pandas as pd
 import numpy as np
  
-file = glob.glob('/Volumes/LabShareFolder/SleepLDF/Combine_all_data/all_data_????-??-??.csv')
+file = glob.glob('path/all_data_????-??-??.csv')
 
 ##read in data
 d = pd.read_csv(file[0])
@@ -28,7 +28,7 @@ subjects_included.replace('Sleep', 'SLEEP',regex=True)
 ##get number of participants
 num = m.shape[0]
 
-f = open(('/Volumes/LabShareFolder/SleepLDF/Combine_all_data/design_%s.mat' % covariate), 'w')
+f = open(('path/design_%s.mat' % covariate), 'w')
 f.write('/NumWaves 2\n')
 f.write('/NumPoints %d\n' % num)
 f.write('/PPheights 1 1\n')
