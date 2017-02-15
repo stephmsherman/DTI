@@ -17,7 +17,8 @@ d['subject'] = d['subject'].str.replace('Sleep','SLEEP')
 ###remove 2 participants who do not have DTI data
 d = d[(d.subject != 'SLEEPLDF004') & (d.subject != 'SLEEPLDF006')]
 
-###sort (just in case)
+###sort (just in case subjects are out of order)
+d.sort(['subject'],ascending=[True], inplace=True)
 
 ##create column of ones for design matrix
 d['one'] = 1
