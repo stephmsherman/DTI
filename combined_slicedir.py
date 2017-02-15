@@ -6,7 +6,7 @@ from PIL import Image
 import glob
 
 ##change directories to where images live
-os.chdir('/home3/kensinel/fMRI_DATA/SleepLDF/DTI/all_tbss/FA/slicesdir')
+os.chdir('/home3/kensinel/fMRI_DATA/SleepLDF/DTI/tbss/FA/slicesdir')
 pngs = sorted(glob.glob('dti_FA_SLEEPLDF0*_FA.png'))
 
 ##list of images an attributes
@@ -27,6 +27,6 @@ new_im = Image.new('RGB', (max_width, total_height))
 y_offset = 0
 for im in images:
 	new_im.paste(im, (0,y_offset))
-	y_offset += im.size[1] ##allows me to change one axis
+	y_offset += im.size[1] ##allows me to change one axis          
 
 new_im.save('all.png')

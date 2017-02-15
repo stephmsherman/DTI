@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-for sub in SLEEPLDF001 SLEEPLDF002 SLEEPLDF003 SLEEPLDF004; do
+sub=$1
+#for sub in SLEEPLDF; do
 study_path="/home3/kensinel/fMRI_DATA/SleepLDF"
 struc_dir=$study_path/$sub"_unpack/struc/DTI"
 
@@ -13,6 +14,6 @@ dtifit -k $struc_dir"/ecc.nii.gz" -o $struc_dir"/dti" -m $struc_dir"/b0_brain_ma
 
 mv $struc_dir"/dti_FA.nii.gz" $struc_dir"/dti_FA_$sub.nii.gz"
 echo DONE with $sub
-done
+#done
 
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-#PURPOSE: step1 convert dcm to nii for DTI analysis
-#usage ./dcm2nii_dti.sh <subject>
+#usage ./dcm2nii_dti.sh <subject> <dti scan>
 sub=$1
 
+#for sub in SLEEPLDF; do
 study_path="/home3/kensinel/fMRI_DATA/SleepLDF"
 struc_dir=$study_path/$sub"_unpack/struc/DTI"
 echo $struc_dir
@@ -39,7 +39,7 @@ mv $struc_dir/*".bval" $struc_dir"/bvals"
 mv $struc_dir/*".bvec" $struc_dir"/bvecs"
 
 mv $struc_dir/*".nii.gz" $struc_dir"/nodif.nii.gz"
-
+#done
 
 
 
