@@ -20,6 +20,8 @@ This protocol starts with preprocessing the dicoms and ends with statistical ana
 
 6. Secure copy all_data_<date>.csv from the brain510 to get covariate data for analyses. Outside of pleiades on a computer connected to the brain50 run: scp path/all_data_<date>.csv <bcusername>@pleiades.bc.edu:path/combined_data/ 
 
+**if examining different covariates you can start here
+
 7. Run: python prep_covariate_design_matrix.py. This script will prompt you to enter the name of the covariate you are interested in analyzing. Type the covariate name exactly how it appears as a column name in the all_data_<date>.csv file (i.e. meq_score). This covariate can only be a numeric column. The script will format the covariate data to the design_<covariate>.mat file and create a new tbss_<covariate> folder with only subject FA files that have a measurement for the covariate in the FA folder. This script also creates a stats folder that include the design matrix and contrast files.
 
 8. Run: ./TBSS_covariate.sh <covariate> (i.e. ./TBSS_covariate.sh meq_score). This script runs the last two steps of TBSS to combine all the FA maps from the participants with complete data and runs randomise.
