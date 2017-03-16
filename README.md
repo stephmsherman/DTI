@@ -1,4 +1,4 @@
-#Diffusion Tensor Imaging Scripts
+# Diffusion Tensor Imaging Scripts
 
 Protocol for DTI analyses on SLEEPLDF project
 This protocol starts with preprocessing the dicoms and ends with statistical analyses to examine whether a covariate is (postively or negatively) associated with white matter integrity (Fractional Anisotropy, FA)
